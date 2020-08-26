@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-// download file by url
+// Download file by url
 func DownloadFile(url string) (fileByte []byte, err error) {
 	resp, err := http.Get(url)
 	if err != nil {
@@ -16,7 +16,7 @@ func DownloadFile(url string) (fileByte []byte, err error) {
 	return
 }
 
-// download and store the file path look like /mnt/logo.png
+// Download and store the file. path look like /mnt/logo.png
 func DownloadFileAndStore(filePath, url string) (err error) {
 	fileByte, err := DownloadFile(url)
 	if err != nil {
