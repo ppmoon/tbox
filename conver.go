@@ -2,6 +2,7 @@ package tbox
 
 import (
 	"bytes"
+	"errors"
 	"io"
 	"strconv"
 )
@@ -37,6 +38,32 @@ func StringSliceToIntSlice(stringSlice []string) (intSlice []int, err error) {
 			return
 		}
 		intSlice = append(intSlice, stringInt)
+	}
+	return
+}
+
+// divide equally int slice
+func DivideEquallyIntSlice(array []int, num int) (array2 [][]int, err error) {
+	arrayLen := len(array)
+	if arrayLen < num {
+		err = errors.New("num must more than the arrayLen")
+		return
+	}
+	subLen := 0
+	// 每组均分大小
+	if arrayLen%num == 0 {
+		subLen = arrayLen / num
+	} else {
+		subLen = arrayLen/num + 1
+	}
+	for i := 0; i < num; i++ {
+		start := subLen * i
+		end := subLen * (i + 1)
+		if i == num-1 {
+			array2 = append(array2, array[start:])
+		} else {
+			array2 = append(array2, array[start:end])
+		}
 	}
 	return
 }
