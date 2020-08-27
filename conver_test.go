@@ -1,8 +1,8 @@
 package tbox_test
 
 import (
+	"github.com/ppmoon/tbox"
 	"reflect"
-	"tbox"
 	"testing"
 )
 

@@ -1,7 +1,7 @@
 package tbox_test
 
 import "testing"
-import "tbox"
+import "github.com/ppmoon/tbox"
 
 func TestDownloadFileAndStore(t *testing.T) {
 	filePath := "logo.png"
