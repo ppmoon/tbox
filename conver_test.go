@@ -29,3 +29,13 @@ func TestStringSliceToIntSlice(t *testing.T) {
 		return
 	}
 }
+
+func TestDivideEquallyIntSlice(t *testing.T) {
+	a := []int{1, 2, 3}
+	b, err := tbox.DivideEquallyIntSlice(a, 2)
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	t.Log(b)
+}
